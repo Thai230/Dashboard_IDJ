@@ -4,12 +4,13 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 
+ruta='https://raw.githubusercontent.com/Thai230/Dashboard_IDJ/main/IDJ_Jovenes.csv'
 # Cargar los datos
-df_idj = pd.read_csv('IDJ_Jovenes.csv')
+df_idj = pd.read_csv(ruta)
 
 # Crear la aplicación de Dash
 app = dash.Dash(__name__)
-
+server= app.server
 # Diseño del tablero con estilos
 app.layout = html.Div(style={'backgroundColor': 'lightblue', 'textAlign': 'center'}, children=[
     html.H1("Indice de Desarrollo Juvenil", style={'color': 'darkblue'}),
